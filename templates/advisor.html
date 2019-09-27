@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block head %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'advisor.js') }}"></script>
+<script>
+  advisors = {{ advisors | tojson }}
+  departments = {{ depts | tojson }}
+  companies = {{ companies | tojson }}
+  company_search = {{ company_search | tojson }}
+  department_search = {{ department_search | tojson }}
+</script>
+{% endblock %} {% block content %}
+
+<div class="container">
+  <div class="search_header">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-1">
+
+          </div>
+          <div class="col-md-3">
+            <div class="search-form-label">
+              <h4>Find a connection at:</h4>
+            </div>
+            <input class="form-control-lg" type="text" name="enter_company" id="enter_company" placeholder="e.g. Google">
+          </div>
+
+          <div class="col-md-3">
+            <div class="search-form-label">
+              <h4>with focus on:</h4>
+            </div>
+            <input class="form-control-lg" type="text" id="enter_department" name="enter_department" placeholder="e.g. Engineering">
+          </div>
+
+          <div class="col-md-3">
+            <button class="btn btn-light" id="search_advisor">Find</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div id="keyword_search"></div>
+  <div id="advisors-list"></div>
+
+</div>
+
+
+
+<!-- </div> -->
+{% endblock %}

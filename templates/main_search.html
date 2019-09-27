@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block title %}Search{% endblock %} {% block head %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'advisor.js') }}"></script>
+<script>
+  advisors = {{ advisors | tojson}}
+  departments = {{ depts | tojson }}
+  companies = {{ companies | tojson }}
+  company_search = {{company_search | tojson }}
+  department_search = {{ department_search | tojson}}
+
+</script>
+<!-- <script type="text/javascript" src="{{ url_for('static', filename = 'main_search.js') }}"></script>
+<script>
+
+</script> -->
+{% endblock %} {% block content %}
+<div class="container-fluid main_search">
+  <div class="row">
+
+    </div>
+    <div class="row">
+      <div class="col-md-4 main-search-form">
+        <div>
+          <h3>Find the connection to your next career step</h3>
+          </div>
+        <div>
+          <form>
+            <div class="form-group">
+              <label>Company</label>
+              <input type="text" class="form-control" id="find_company" aria-describedby="findCompanyHelp" placeholder="e.g. Google">
+              <small id="findCompanyHelp" class="form-text text-muted">Where you want to work</small>
+            </div>
+
+            <div class="form-group">
+              <label>Department</label>
+              <input type="text" class="form-control" id="find_department" aria-describedby="findDepartmentHelp" placeholder="e.g. Engineering">
+              <small id="findDepartmentHelp" class="form-text text-muted">Specialty or organization within a company</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="find_advisor">Find</button>
+            </form>
+          </div>
+          <div>
+            <small>
+              Loved your internship? Want to refer others? Sign up <a href="http://127.0.0.1:5000/create_profile">here</a>.
+            </small>
+
+					</div>
+        </div>
+      </div>
+  </div>
+{% endblock %}

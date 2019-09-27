@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+ <title>{% block title %}{% endblock %}</title>
+  <!-- JQuery -->
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  {% block head %}{% endblock %}
+
+  <style>
+  :root {
+    --accent-color: rgb(233, 220, 42);
+    --main-color: rgb(41, 144, 177);
+  }
+    #enter_company {
+      margin-left: 5%
+    }
+    .main_search {
+      background-image: url("../static/images/coffee.jpg");
+      height: 100vh;
+      background-size: cover;
+    }
+    .main-search-form {
+      background-color: white;
+      padding: 3%;
+      margin: 10% 5% 5% 15%;
+      box-shadow: 0 4px 8px 0 rgba(1, 1, 1, 0.2), 0 6px 20px 0 rgba(1, 1, 1, 0.19);
+    }
+    .search_header {
+      background-color: var(--main-color);
+    }
+    .form-control-lg{
+      margin: 1% 15% 15% 0%; */
+
+    }
+     #search_advisor {
+       margin-top:15%;
+       background-color: var(--accent-color);
+       width: 30%;
+       height: 40%;
+     }
+     .search-form-label {
+       color: var(--accent-color);
+     }
+		.advisor_row {
+			border-bottom: 1px solid rgb(207, 207, 207);
+
+		}
+    .advisor_name {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .advisor_university {
+      font-size: 15px;
+      font-weight: lighter;
+    }
+
+    .advisor_details, .get-in-touch, .bookmark{
+      padding-top: 2%;
+    }
+
+		.profile_pic {
+			width: 100%;
+			height: 150px;
+		}
+
+    #current_user_profile {
+      display: hidden;
+    }
+
+    .contact-btn {
+      border: 1px solid var(--main-color);
+      padding: 4%;
+      border-radius: 10%;
+    }
+
+  </style>
+  </head>
+
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="http://127.0.0.1:5000">Career Connect Marketplace</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <!-- <a class="nav-item nav-link" href="http://127.0.0.1:5000/create_profile">New User</a> -->
+        <a class="nav-item nav-link" href="http://127.0.0.1:5000/user_profile">Advisor Profile</a>
+      </div>
+    </div>
+  </nav>
+  {% block content %}{% endblock %}
+  </body>
+</html>

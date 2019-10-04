@@ -19,8 +19,12 @@ departments_autocomplete = [
     "Research",
     "Engineering",
     "Data Science",
-    "Machine Learning"]
+    "Machine Learning",
+    "Other"
+    ]
 
+meeting_requests = []
+meeting_id = 0
 def gen_company_autocomplete ():
     global providers
 
@@ -63,18 +67,25 @@ def find():
 
     if (len(company_term.strip())==0 and len(department_term.strip())==0):
         return jsonify(matches=providers)
-    if len(company_term.strip())>0:
+
+    if len(company_term.strip())>0 and len(department_term.strip())==0:
         print("Search advisor by company = " + company_term)
         for person in providers:
             if company_term in person["company"].lower():
                 results.append(person)
                 results_id.add(person["id"])
-    if len(department_term.strip())>0:
+    elif len(department_term.strip())>0 and len(company_term.strip())==0:
         print("Search advisor by department = " + department_term)
         for person in providers:
             if department_term in person["department"].lower():
                 results.append(person)
                 results_id.add(person["id"])
+    else:
+        for person in providers:
+            if company_term in person["company"].lower():
+                if department_term in person["department"].lower():
+                    results.append(person)
+                    results_id.add(person["id"])
     global company_search_term
     global department_search_term
     company_search_term = None
@@ -84,7 +95,11 @@ def find():
 
 @app.route('/create_profile')
 def create_profile():
-    return render_template("create_profile.html")
+    if current_advisor_profile is None:
+        return render_template("create_profile.html", current_user={})
+    else:
+        return render_template("create_profile.html", current_user=current_advisor_profile)
+    # return render_template("create_profile.html")
 
 @app.route('/save_advisor', methods=['GET', 'POST'])
 def save_advisor():
@@ -97,8 +112,11 @@ def save_advisor():
      "id": providers_current_id,
      "name": advisor_data["name"],
      "university": advisor_data["university"],
+     "department": advisor_data["department"],
      "company": advisor_data["company"],
-     "interests": advisor_data["interests"]
+     "interests": advisor_data["interests"],
+     "availability": advisor_data["availability"],
+     "bookmarked": False,
     }
 
     providers.append(current_advisor_profile)
@@ -118,7 +136,9 @@ def edit_profile():
             person["name"] = advisor_data["name"]
             person["university"] = advisor_data["university"]
             person["company"] = advisor_data["company"]
+            person["department"] = advisor_data["department"]
             person["interests"] = advisor_data["interests"]
+            person["availability"] = advisor_data["availability"]
     return jsonify(current_user=current_advisor_profile)
 
 @app.route('/delete_profile', methods=['GET', 'POST'])
@@ -151,7 +171,7 @@ def set_search_terms():
 
     company_search_term = request.get_json()["company"]
     department_search_term = request.get_json()["department"]
-    return
+    return jsonify(data={})
 
 @app.route('/set_bookmark', methods=['GET', 'POST'])
 def set_bookmark():
@@ -167,5 +187,27 @@ def set_bookmark():
             person["bookmarked"] = False
     return jsonify(data={})
 
+@app.route('/coffee/<id>')
+def coffee(id):
+    for person in providers:
+        if person["id"] == int(id):
+            requested_advisor = person
+    return render_template("coffee.html", requested_advisor=requested_advisor)
+
+@app.route('/set_coffee', methods=['GET', 'POST'])
+def set_coffee():
+    global meeting_requests
+    global meeting_id
+    addition = request.get_json()["add"]
+    print(addition)
+    addition['id'] = meeting_id
+    meeting_id = meeting_id + 1
+    meeting_requests.insert(0, addition)
+    return jsonify(data=meeting_requests)
+
+@app.route('/all_coffee')
+def all_coffee():
+    global meeting_requests
+    return render_template("all_coffee.html", coffee=meeting_requests)
 if __name__ == '__main__':
-   app.run(debug=True)
+   app.run(host='0.0.0.0', debug=True)

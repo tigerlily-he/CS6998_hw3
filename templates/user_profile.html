@@ -7,50 +7,35 @@ current_user = {{ current_user | tojson}}
 
 
 <div class="container">
-  <div class="jumbotron">
-    <h1>Advisor User Profile</h1>
-    <h5>Manage your profile</h5>
-  </div>
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8" id="user_profile">
-      <div id="no_current_user">
-        First time here? <a href="http://127.0.0.1:5000/create_profile">Get started now</a>
-        </div>
-				<div class="row status">
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 ">
+			<h3 class="text-center"> Your Advisor Account</h3>
+			<p>
+				Advisors are a crucial part of Avancier. Sharing your experience, both full-time and internship, helps students envision and achieve success in their career.
+				</p>
+				<br />
+			</div>
+			<div class="col-md-3"></div>
+		</div>
 
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div class="shadow p-3 mb-5 rounded" id="profile_view">
 				</div>
-      <form id="current_user_profile">
-        <div class="form-group">
-          <label>Name</label>
-          <input type="text" class="form-control" id="input_name" aria-describedby="nameHelp" placeholder="Enter name">
-          <small id="nameHelp" class="form-text text-muted">Preferred Name</small>
-        </div>
-
-        <div class="form-group">
-          <label>University</label>
-          <input type="text" class="form-control" id="input_university" aria-describedby="universityHelp" placeholder="Enter university">
-          <small id="universityHelp" class="form-text text-muted">Undergraduate institution</small>
-        </div>
-
-				<div class="form-group">
-					<label>Company</label>
-					<input type="text" class="form-control" id="input_company" aria-describedby="companyHelp" placeholder="Enter company">
-					<small id="companyHelp" class="form-text text-muted">Organization employed at</small>
+			<div class="edit_or_delete-btn">
+				<button type="submit" class="btn btn-danger" id="delete_profile">Delete My Profile</button>
+        <button type="submit" class="btn btn-primary" id="edit_profile">Edit My Profile</button>
 				</div>
+				<div class="create-btn">
+	        <button type="submit" class="btn btn-success" id="get_started">Get Started</button>
+					</div>
+			</div>
 
-        <div class="form-group">
-          <label>Interests</label>
-          <input type="text" class="form-control" id="input_interests" aria-describedby="interestsHelp" placeholder="Enter interests">
-          <small id="interests" class="form-text text-muted">Area of focus or questions that keep you busy. Separate each term with a comma (",")</small>
-        </div>
+		<div class="col-md-4"></div>
+</div>
 
-        <button type="submit" class="btn btn-danger" id="delete_profile">Delete My Profile</button>
-        <button type="submit" class="btn btn-primary" id="edit_profile">Save</button>
-      </form>
-    </div>
-    <div class="col-md-2"></div>
-  </div>
 
 </div>
 {% endblock %}

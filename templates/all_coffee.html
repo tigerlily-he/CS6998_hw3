@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block head %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'all_coffee.js') }}"></script>
+<script>
+coffee = {{ coffee | tojson}}
+</script>
+{% endblock %} {% block content %}
+<div class="container-flud all_coffee_container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div>
+        <h1 class="text-center" >Pending Meeting Requests</h1>
+        </div>
+        <div id="all-coffee-requests">
+
+          </div>
+    </div>
+    <div class="col-md-2"></div>
+    </div>
+</div>
+{% endblock %}

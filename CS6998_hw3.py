@@ -23,6 +23,8 @@ departments_autocomplete = [
     "Other"
     ]
 
+meeting_requests = []
+meeting_id = 0
 def gen_company_autocomplete ():
     global providers
 
@@ -169,7 +171,7 @@ def set_search_terms():
 
     company_search_term = request.get_json()["company"]
     department_search_term = request.get_json()["department"]
-    return
+    return jsonify(data={})
 
 @app.route('/set_bookmark', methods=['GET', 'POST'])
 def set_bookmark():
@@ -185,9 +187,27 @@ def set_bookmark():
             person["bookmarked"] = False
     return jsonify(data={})
 
-@app.route('/coffee')
-def coffee():
-    return render_template("coffee.html")
+@app.route('/coffee/<id>')
+def coffee(id):
+    for person in providers:
+        if person["id"] == int(id):
+            requested_advisor = person
+    return render_template("coffee.html", requested_advisor=requested_advisor)
 
+@app.route('/set_coffee', methods=['GET', 'POST'])
+def set_coffee():
+    global meeting_requests
+    global meeting_id
+    addition = request.get_json()["add"]
+    print(addition)
+    addition['id'] = meeting_id
+    meeting_id = meeting_id + 1
+    meeting_requests.insert(0, addition)
+    return jsonify(data=meeting_requests)
+
+@app.route('/all_coffee')
+def all_coffee():
+    global meeting_requests
+    return render_template("all_coffee.html", coffee=meeting_requests)
 if __name__ == '__main__':
    app.run(host='0.0.0.0', debug=True)

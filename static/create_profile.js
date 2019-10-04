@@ -57,19 +57,6 @@ const create_profile = function () {
         success: function(data, text){
           console.log(data["current"])
           console.log(data["advisors"])
-        // clear inputs
-  //       $("#input_name").val("")
-  //       $("#input_university").val("")
-  //       $("#input_company").val("")
-  //       $("#input_interests").val("")
-  //       var confirm_creation = $("<div class='alert alert-success' role='alert'>")
-  //       confirm_creation.text("Success! New profile has been created. ")
-	// var profile_link_url = window.location.origin + "/user_profile"
-  //       var profile_link = $(`<a href=${profile_link_url}>`)
-  //       profile_link.text(" Check it out.")
-  //
-  //       confirm_creation.append(profile_link)
-  //       $(".status").append(confirm_creation)
   window.location.href= window.location.origin + '/user_profile'
         },
         error: function(request, status, error){
@@ -132,8 +119,6 @@ const edit_profile = function () {
 const prefill_user_data = function () {
 
   if (Object.keys(current_user).length>0) {
-    // $("#current_user_profile").show()
-    // $("#no_current_user").hide()
 
     // fill in values
     $("#input_name").val(current_user["name"])
@@ -142,8 +127,10 @@ const prefill_user_data = function () {
     $("#input_department").val(current_user["department"])
     $("#input_interests").val(current_user["interests"].join(", "))
 
-  } else {
-    // $("#current_user_profile").hide()
-    // $("#no_current_user").show()
+    $.each(current_user["availability"], function(i, day) {
+      var checkbox_id = "#"+ day
+      $(checkbox_id).prop('checked', true)
+  })
+} else {
   }
 }

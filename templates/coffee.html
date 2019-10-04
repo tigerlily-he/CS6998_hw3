@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block head %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'coffee.js') }}"></script>
+<script>
+  requested_advisor = {{ requested_advisor | tojson}}
+</script>
+{% endblock %} {% block content %}
+<div class="container-fluid schedule_coffee_container">
+  <div class="row">
+    <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h1 class="text-center">Schedule a coffee chat</h1>
+        </div>
+    <div class="col-md-3"></div>
+    </div>
+    <br />
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <div class="advisor-bio shadow bg-white p-3 mb-5 rounded">
+      </div>
+      </div>
+          <div class="col-md-6 shadow p-3 mb-5 bg-white rounded">
+            <form id="schedule_coffee">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" id="input_name" aria-describedby="nameHelp" placeholder="Enter name">
+                <small id="nameHelp" class="form-text text-muted">Preferred Name</small>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <label>Graduating Year</label>
+                  <select class="form-control" id="input_graduating_year">
+                <option>2020</option>
+                <option>2021</option>
+                <option>2022</option>
+                <option>2023</option>
+                <option>2024</option>
+              </select>
+                </div>
+                <div class="col">
+                  <label>Major</label>
+                  <input type="text" class="form-control" id="input_major" placeholder="Major">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Type</label>
+                <select class="form-control" id="input_interaction_type">
+              <option>Coffee Chat</option>
+              <option>Request Referral</option>
+              <option>Mock Interview</option>
+              <option>Other</option>
+            </select>
+              </div>
+              <div class="form-group" id="input_time">
+                <div>
+                  <label>Meeting Date</label>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea type="text" class="form-control" id="input_message" aria-describedby="messageHelp" placeholder="Write a note"></textarea>
+                <small id="messageHelp" class="form-text text-muted">Tell your advisor what you are looking to get out of the conversation</small>
+              </div>
+              <button type="submit" class="btn btn-primary" id="request_coffee">Submit</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+{% endblock %}

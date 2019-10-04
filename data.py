@@ -6,7 +6,8 @@ providers = [
   "company": "Microsoft",
   "department": "Design",
   "bookmarked": False,
-  "interests": ["front end engineering", "design"]
+  "interests": ["front end engineering", "design"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 1,
@@ -15,7 +16,8 @@ providers = [
   "company": "Microsoft",
   "department": "Product",
   "bookmarked": False,
-  "interests": ["front end engineering", "design"]
+  "interests": ["front end engineering", "design"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 2,
@@ -24,7 +26,8 @@ providers = [
   "company": "Adobe",
   "department": "Design",
   "bookmarked": False,
-  "interests": ["front end engineering", "design"]
+  "interests": ["front end engineering", "design"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 3,
@@ -33,7 +36,8 @@ providers = [
   "company": "Adobe",
   "department": "Research",
   "bookmarked": False,
-  "interests": ["front end engineering", "design"]
+  "interests": ["front end engineering", "design"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 4,
@@ -42,7 +46,8 @@ providers = [
   "company": "DocuSign",
   "department": "Design",
   "bookmarked": False,
-  "interests": ["front end engineering", "design"]
+  "interests": ["front end engineering", "design"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 5,
@@ -51,7 +56,8 @@ providers = [
   "company": "DocuSign",
   "department": "Research",
   "bookmarked": False,
-  "interests": ["front end engineering", "design"]
+  "interests": ["front end engineering", "design"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 6,
@@ -60,7 +66,8 @@ providers = [
   "company": "Salesforce",
   "department": "Design",
   "bookmarked": False,
-  "interests": ["front end engineering", "design"]
+  "interests": ["front end engineering", "design"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 7,
@@ -69,7 +76,8 @@ providers = [
   "company": "Salesforce",
   "department": "Research",
   "bookmarked": False,
-  "interests": ["front end engineering", "design"]
+  "interests": ["front end engineering", "design"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 8,
@@ -78,7 +86,8 @@ providers = [
   "company": "Google",
   "department": "Research",
   "bookmarked": False,
-  "interests": ["front end engineering", "design"]
+  "interests": ["front end engineering", "design"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 9,
@@ -87,7 +96,8 @@ providers = [
   "company": "Google",
   "department": "Design",
   "bookmarked": False,
-  "interests": ["front end engineering", "design"]
+  "interests": ["front end engineering", "design"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 10,
@@ -96,7 +106,8 @@ providers = [
   "company": "Facebook",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["back end engineering", "infrastructure"]
+  "interests": ["back end engineering", "infrastructure"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 11,
@@ -105,7 +116,8 @@ providers = [
   "company": "Facebook",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["back end engineering", "infrastructure"]
+  "interests": ["back end engineering", "infrastructure"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 12,
@@ -114,7 +126,8 @@ providers = [
   "company": "LinkedIn",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["back end engineering", "infrastructure"]
+  "interests": ["back end engineering", "infrastructure"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 13,
@@ -123,7 +136,8 @@ providers = [
   "company": "LinkedIn",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["back end engineering", "infrastructure"]
+  "interests": ["back end engineering", "infrastructure"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 14,
@@ -132,7 +146,8 @@ providers = [
   "company": "Oracle",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["back end engineering", "infrastructure"]
+  "interests": ["back end engineering", "infrastructure"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 15,
@@ -141,7 +156,8 @@ providers = [
   "company": "IBM",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["back end engineering", "infrastructure"]
+  "interests": ["back end engineering", "infrastructure"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 16,
@@ -150,7 +166,8 @@ providers = [
   "company": "IBM",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["back end engineering", "infrastructure"]
+  "interests": ["back end engineering", "infrastructure"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 17,
@@ -159,7 +176,8 @@ providers = [
   "company": "Amazon",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["back end engineering", "infrastructure"]
+  "interests": ["back end engineering", "infrastructure"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 18,
@@ -168,7 +186,8 @@ providers = [
   "company": "Amazon",
   "department": "Data Science",
   "bookmarked": False,
-  "interests": ["machine learning", "natural language processing"]
+  "interests": ["machine learning", "natural language processing"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 19,
@@ -177,7 +196,8 @@ providers = [
   "company": "Netflix",
   "department": "Data Science",
   "bookmarked": False,
-  "interests": ["machine learning", "natural language processing"]
+  "interests": ["machine learning", "natural language processing"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 20,
@@ -186,7 +206,8 @@ providers = [
   "company": "Netflix",
   "department": "Machine Learning",
   "bookmarked": False,
-  "interests": ["machine learning", "natural language processing"]
+  "interests": ["machine learning", "natural language processing"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 21,
@@ -195,7 +216,8 @@ providers = [
   "company": "Airbnb",
   "department": "Data Science",
   "bookmarked": False,
-  "interests": ["machine learning", "natural language processing"]
+  "interests": ["machine learning", "natural language processing"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 22,
@@ -204,7 +226,8 @@ providers = [
   "company": "Airbnb",
   "department": "Machine Learning",
   "bookmarked": False,
-  "interests": ["machine learning", "natural language processing"]
+  "interests": ["machine learning", "natural language processing"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 23,
@@ -213,7 +236,8 @@ providers = [
   "company": "Apple",
   "department": "Data Science",
   "bookmarked": False,
-  "interests": ["machine learning", "natural language processing"]
+  "interests": ["machine learning", "natural language processing"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 24,
@@ -222,7 +246,8 @@ providers = [
   "company": "Apple",
   "department": "Data Science",
   "bookmarked": False,
-  "interests": ["machine learning", "natural language processing"]
+  "interests": ["machine learning", "natural language processing"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 25,
@@ -231,7 +256,8 @@ providers = [
   "company": "Consensys",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["blockchain", "security"]
+  "interests": ["blockchain", "security"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 26,
@@ -240,7 +266,8 @@ providers = [
   "company": "Consensys",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["blockchain", "security"]
+  "interests": ["blockchain", "security"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 27,
@@ -249,7 +276,8 @@ providers = [
   "company": "Twilio",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["compilers", "open-source"]
+  "interests": ["compilers", "open-source"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 28,
@@ -258,7 +286,8 @@ providers = [
   "company": "Twilio",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["compilers", "open-source"]
+  "interests": ["compilers", "open-source"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 },
 {
   "id": 29,
@@ -267,7 +296,8 @@ providers = [
   "company": "Twilio",
   "department": "Engineering",
   "bookmarked": False,
-  "interests": ["compilers", "open-source"]
+  "interests": ["compilers", "open-source"],
+  "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 }
 ]
 

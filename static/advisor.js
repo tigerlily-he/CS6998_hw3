@@ -168,9 +168,9 @@ const display_advisors_list = function(people_list){
         var bookmarkDiv = $("<div class='col-md-2 bookmark'>");
         var bookmarkBtn =  $(`<button data-id =${person["id"]} class="btn bookmark-btn"/>`)
         if (person["bookmarked"] == false){
-          $(bookmarkBtn).append("Bookmark").addClass( "btn-primary" ).removeClass("btn-danger")
+          $(bookmarkBtn).append("🔖 Bookmark").addClass( "btn-primary" ).removeClass("btn-danger")
         } else {
-          $(bookmarkBtn).append("Unbookmark").addClass("btn-danger").removeClass("btn-primary")
+          $(bookmarkBtn).append("🗑️ Unbookmark").addClass("btn-danger").removeClass("btn-primary")
         }
 
 
@@ -180,8 +180,10 @@ const display_advisors_list = function(people_list){
         $("#advisors-list").append(row)
 
         var getInTouchDiv = $("<div class='col-md-2 get-in-touch'>");
-        var contactEmail = person["name"].substring(0, 3).toLowerCase()+person["id"]+"@"+person["company"].toLowerCase()+".com"
-        var contactBtn = $(`<a href='mailto:${contactEmail}' class="contact-btn"><button type='button' class='btn btn-outline-primary contact-btn' data-person-id = ${person["id"]} >`).text('Contact')
+        var contactBtn =  $(`<button data-id =${person["id"]} class="btn btn-info contact-btn"/>`)
+        $(contactBtn).append("🤝 Meet")
+        // var contactEmail = person["name"].substring(0, 3).toLowerCase()+person["id"]+"@"+person["company"].toLowerCase()+".com"
+        // var contactBtn = $(`<a href='mailto:${contactEmail}' class="contact-btn"><button type='button' class='btn btn-outline-primary contact-btn' data-person-id = ${person["id"]} >`).text('Contact')
         $(getInTouchDiv).append(contactBtn)
         $(row).append(getInTouchDiv)
 
@@ -190,10 +192,10 @@ const display_advisors_list = function(people_list){
 
       $(".bookmark-btn").click(function (e) {
 
-        if ($(this).text() == "Bookmark"){
+        if ($(this).text() == "🔖 Bookmark"){
           // add bookmark
           alert("Bookmark Success")
-          $(this).text("Unbookmark");
+          $(this).text("🗑️ Unbookmark");
           $(this).addClass( "btn-danger" ).removeClass("btn-primary")
           setBookmark({
               "add": [parseInt($(this).attr("data-id"))],
@@ -203,7 +205,7 @@ const display_advisors_list = function(people_list){
         } else {
           // remove bookmark
           alert("Bookmark Removal Success")
-          $(this).text("Bookmark");
+          $(this).text("🔖 Bookmark");
           $(this).addClass( "btn-primary" ).removeClass("btn-danger")
           setBookmark({
               "add": [],
@@ -211,6 +213,9 @@ const display_advisors_list = function(people_list){
           })
         }
 
+      })
+      $(".contact-btn").click(function (e) {
+        window.location.href= window.location.origin + '/coffee/'+$(this).attr("data-id")
       })
   }
 }

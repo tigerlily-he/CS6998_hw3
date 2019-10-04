@@ -267,5 +267,5 @@ var searchForAdvisors = function () {
   }
 });
 
-window.location.href='http://127.0.0.1:5000/advisors'
+window.location.href= window.location.origin + '/advisors'
 }

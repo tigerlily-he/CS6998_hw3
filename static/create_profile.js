@@ -44,7 +44,8 @@ const create_profile = function () {
         $("#input_interests").val("")
         var confirm_creation = $("<div class='alert alert-success' role='alert'>")
         confirm_creation.text("Success! New profile has been created. ")
-        var profile_link = $("<a href='http://127.0.0.1:5000/user_profile'>")
+	var profile_link_url = window.location.origin + "/user_profile"
+        var profile_link = $(`<a href=${profile_link_url}>`)
         profile_link.text(" Check it out.")
 
         confirm_creation.append(profile_link)

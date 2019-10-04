@@ -15,7 +15,7 @@ current_user = {{ current_user | tojson}}
     <div class="col-md-2"></div>
     <div class="col-md-8" id="user_profile">
       <div id="no_current_user">
-        First time here? <a href="http://127.0.0.1:5000/create_profile">Get started now</a>
+	      First time here? <a href="{{ url_for('create_profile') }}">Get started now</a>
         </div>
 				<div class="row status">
 

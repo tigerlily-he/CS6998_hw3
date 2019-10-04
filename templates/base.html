@@ -20,10 +20,15 @@
     #enter_company {
       margin-left: 5%
     }
+    /* Container background colors */
     .main_search {
       background-image: url("../static/images/coffee.jpg");
       height: 100vh;
       background-size: cover;
+    }
+
+    .create_profile_container, .schedule_coffee_container {
+      background-color: rgb(242, 248, 250);
     }
     .main-search-form {
       background-color: white;
@@ -35,7 +40,7 @@
       background-color: var(--main-color);
     }
     .form-control-lg{
-      margin: 1% 15% 15% 0%; */
+      margin: 1% 20% 20% 0%; */
 
     }
      #search_advisor {
@@ -49,7 +54,7 @@
      }
 		.advisor_row {
 			border-bottom: 1px solid rgb(207, 207, 207);
-
+      padding-bottom: 3%
 		}
     .advisor_name {
       font-size: 30px;
@@ -87,7 +92,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="{{ url_for('landing') }}">Career Connect Marketplace</a>
+	  <a class="navbar-brand" href="{{ url_for('landing') }}">Avancier</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

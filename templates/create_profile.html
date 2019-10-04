@@ -1,24 +1,28 @@
 {% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block head %}
 	  <script type="text/javascript" src="{{ url_for('static', filename = 'create_profile.js') }}"></script>
-
+<script>
+current_user = {{ current_user | tojson}}
+</script>
 {% endblock %} {% block content %}
 
 
-  <div class="container">
-    <div class="jumbotron">
-      <h1>Getting to know you</h1>
-      <h5>Create a profile for fellow students who are interested in places you have worked at to find you</h5>
-    </div>
-		<div class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8 status">
+  <div class="container-fluid create_profile_container">
 
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 ">
+				<h3 class="text-center"> Your advisor profile</h3>
+				<p>
+					Be as detailed as possible. The more you share about yourself, the more likely a student will reach out to you for a coffee chat.
+					</p>
+					<br />
 				</div>
+				<div class="col-md-3"></div>
 			</div>
 
     <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 shadow p-3 mb-5 bg-white rounded">
         <form>
           <div class="form-group">
             <label>Name</label>
@@ -38,20 +42,75 @@
             <small id="companyHelp" class="form-text text-muted">Organization employed at</small>
           </div>
 
+					<div class="form-group">
+            <label>Department</label>
+						<select class="form-control" id="input_department">
+				      <option>Design</option>
+				      <option>Product</option>
+				      <option>Research</option>
+				      <option>Engineering</option>
+				      <option>Data Science</option>
+							<option>Machine Learning</option>
+							<option>Other</option>
+			    	</select>
+						<small id="departmentHelp" class="form-text text-muted">Suborganization</small>
+          </div>
+
           <div class="form-group">
             <label>Interests</label>
             <input type="text" class="form-control" id="input_interests" aria-describedby="interestsHelp" placeholder="Enter interests">
             <small id="interests" class="form-text text-muted">Area of focus or questions that keep you busy. Separate each term with a comma (",")</small>
           </div>
 
-          <button type="submit" class="btn btn-primary" id="create_profile">Submit</button>
+					<div class="form-group">
+						<div>
+							<label>Days Available for Coffee Chats</label>
+							</div>
+
+						<div class="form-check form-check-inline">
+							<input class="form-check-input availability" type="checkbox" id="Sunday" value="Sunday">
+							<label class="form-check-label" for="Sunday">Sunday</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input availability" type="checkbox" id="Monday" value="Monday">
+							<label class="form-check-label" for="Monday">Monday</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input availability" type="checkbox" id="Tuesday" value="Tuesday">
+							<label class="form-check-label" for="Tuesday">Tuesday</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input availability" type="checkbox" id="Wednesday" value="Wednesday">
+							<label class="form-check-label" for="Wednesday">Wednesday</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input availability" type="checkbox" id="Thursday" value="Thursday">
+							<label class="form-check-label" for="Thursday">Thurday</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input availability" type="checkbox" id="Friday" value="Friday">
+							<label class="form-check-label" for="Friday">Friday</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input availability" type="checkbox" id="Saturday" value="Saturday">
+							<label class="form-check-label" for="Saturday">Saturday</label>
+						</div>
+						</div>
+					<button type="submit" class="btn btn-secondary" id="cancel_create_profile">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="create_profile">Save</button>
         </form>
 
 
       </div>
-      <div class="col-md-2"></div>
+      <div class="col-md-3"></div>
     </div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 status">
 
+				</div>
+				<div class="col-md-3"></div>
+			</div>
   </div>
 
 {% endblock %}
